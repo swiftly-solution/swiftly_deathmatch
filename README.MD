@@ -7,7 +7,7 @@
   <h3 align="center">[Swiftly] Deathmatch</h3>
 
   <p align="center">
-    A simple core plugin for Swiftly that implements the basic functionality of a deathmatch server.
+    A simple plugin for swiftly that implements the basic functionality of a Deathmatch/FFA server.
     <br/>
     <br/>
     <a href="https://github.com/swiftly-solution/swiftly_deathmatch/issues">Report Bug</a>
@@ -19,9 +19,9 @@
 
 ### Installation 👀
 
-1. Download the newest [release](https://github.com/swiftly-solution/swiftly_rank/releases).
+1. Download the newest [release](https://github.com/swiftly-solution/swiftly_deathmatch/releases).
 2. Everything is drag & drop, so i think you can do it!
-3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_ranks` like in the following example:
+3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_deathmatch` like in the following example:
 ```json
 {
     "swiftly_deathmatch": {
@@ -33,24 +33,38 @@
     }
 }
 ```
-4. While developing the plugin, I have used a basic .cfg with only a few settigns, if you want to use the same settings as me, use the provided .cfg in the release archive. (should be placed in cfg/)
 (!) Don't forget to replace the `...` with the actual values !!
+
+4. While developing the plugin, I have been using a config with a few settings, that works for a basic Deathmatch/FFA server, if you want to use the same settings as me, use the provided cfg in the archive, if not, make your own settings (cvars).
+
+### Features ✨
+
+* Instant Respawning after death.
+* HP Regen on kill.
+* Ammo Refill on kill.
+* Choosing the guns through a menu (!guns) or through chat commands (!ak47, !m4a4, !m4a1, !deagle, etc)
+
 
 ### Configuring the plugin 🧐
 
-* After installing the plugin, you should change the default prefix from: ``addons/swiftly/translations/translation.swiftly_deathmatch.json`` (optional)
-* To change the value of the HP Regen, edit: ``addons/swiftly/configs/plugins/deathmatch.json``
+* After installing the plugin, you should change the default prefix and the default translation messages from ``addons/swiftly/translations/translation.swiftly_deathmatch.json`` (optional).
+* To change the value of the HP Regen, edit ``addons/swiftly/configs/plugins/deathmatch.json``.
 
 ### How does it work? 🤔
 
-* When joining the server for the first time, a new field in the ``player_guns`` table will be added, with the ``steamid``, ``primarygun`` and the ``secondarygun`` of the player. By default, it assigns to the player AK-47 and Deagle, but they can of course change them using the commands provided by the plugin (!ak, !m4a4, !m4a1, etc)
-* 
+* When the player connects for the first time, it inserts a new field into the ``player_guns`` table in DB with the following structure: ``steamid``, ``primarygun``, ``secondarygun``.
+* When a player chooses a weapon (from the guns menu or through a chat command), it inserts that gun into the DB (wheter it is a primary or a secondary weapon) and next time he reconnects on the server he will have that weapon, so no need for choosing the same weapon everytime you reconnect.
+
+## Plugins to use with 💡
+
+* [swiftly_rank](https://github.com/swiftly-solution/swiftly_rank) - It provides an smooth experience without any flaws and it is easy to install.
+* [swiftly_removedefaultmessages](https://github.com/swiftly-solution/swiftly_removedefaultmessages) - It removes the annoying default messages from the chat (such as joining a team, etc)
 
 ### TODO 🛡️
 
-* Top Command.
-* Rank Icons in Scoreboard.
-* Chat Alert when reaching a new rank.
+* Command Cooldown (will be done ASAP).
+* Healthshot effect.
+* Killstreak messages in the chat.
 
 ### Creating A Pull Request 😃
 
