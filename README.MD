@@ -21,7 +21,7 @@
 
 1. Download the newest [release](https://github.com/swiftly-solution/swiftly_deathmatch/releases).
 2. Everything is drag & drop, so i think you can do it!
-3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_ranks` like in the following example:
+3. Setup database connection in `addons/swiftly/configs/databases.json` with the key `swiftly_deathmatch` like in the following example:
 ```json
 {
     "swiftly_deathmatch": {
