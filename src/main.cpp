@@ -256,11 +256,13 @@ NextTick([currentWeapon, regenHP, attacker]() -> void {
         currentWeapon->SetReserveAmmo(90);
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+        attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
     } else if (std::string(currentWeapon->GetName()) == "weapon_awp") {
         currentWeapon->SetClipAmmo(5);
         currentWeapon->SetReserveAmmo(30);
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+        attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
     } else if (std::string(currentWeapon->GetName()) == "weapon_m4a1") {
         if (currentWeapon->GetSilencerType() == WeaponSilencerType::NONE) {
             currentWeapon->SetClipAmmo(30);
@@ -272,21 +274,26 @@ NextTick([currentWeapon, regenHP, attacker]() -> void {
         }
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+        attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
     } else if (std::string(currentWeapon->GetName()) == "weapon_deagle") {
         currentWeapon->SetClipAmmo(7);
         currentWeapon->SetReserveAmmo(35);
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+        attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
     } else if (std::string(currentWeapon->GetName()) == "weapon_sg556") {
         currentWeapon->SetClipAmmo(30);
         currentWeapon->SetReserveAmmo(90);
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+    attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
     } else if (std::string(currentWeapon->GetName()) == "weapon_aug") {
         currentWeapon->SetClipAmmo(30);
         currentWeapon->SetReserveAmmo(90);
         attacker->health->Set(std::min(attacker->health->Get() + regenHP, 100));
         attacker->weapons->GiveWeapon("item_assaultsuit");
+        attacker->SetHealthShotBoostEffectExpirationTime(server->GetCurrentTime() + 1);
+
     }
 });
 }
