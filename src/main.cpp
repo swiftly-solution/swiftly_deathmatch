@@ -301,7 +301,7 @@ NextTick([currentWeapon, regenHP, attacker]() -> void {
 void OnPluginStart()
 {
     db = new Database("swiftly_deathmatch");
-    DB_Result result = db->Query("CREATE TABLE IF NOT EXISTS `players_guns` (`steamid` varchar(128) NOT NULL, `primarygun` varchar(128) NOT NULL, `secondarygun` varchar(128) NOT NULL, DEFAULT 0) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;");
+    DB_Result result = db->Query("CREATE TABLE IF NOT EXISTS `players_guns` (`steamid` varchar(128) NOT NULL, `primarygun` varchar(128) NOT NULL, `secondarygun` varchar(128) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;");
     if (result.size() > 0)
         db->Query("ALTER TABLE `players_guns` ADD UNIQUE KEY `steamid` (`steamid`);");
 
