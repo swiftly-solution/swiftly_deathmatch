@@ -16,6 +16,7 @@
   </p>
 </p>
 
+![Downloads](https://img.shields.io/github/downloads/swiftly-solution/swiftly_deathmatch/total) ![Contributors](https://img.shields.io/github/contributors/swiftly-solution/swiftly_deathmatch?color=dark-green) ![Issues](https://img.shields.io/github/issues/swiftly-solution/swiftly_deathmatch) ![License](https://img.shields.io/github/license/swiftly-solution/swiftly_deathmatch) 
 
 ### Installation 👀
 
