@@ -64,7 +64,6 @@
 ### TODO 🛡️
 
 * Command Cooldown (will be done ASAP).
-* Healthshot effect.
 * Killstreak messages in the chat.
 
 ### Creating A Pull Request 😃
